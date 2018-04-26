@@ -1,0 +1,120 @@
+<!-- Wide card with share menu button -->
+<!doctype html>
+
+<head>
+<link rel="icon" href="http://i68.tinypic.com/judauw.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-red.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<title>Crear Cuenta</title>
+
+<style align="center">
+        .demo-card-wide.mdl-card {
+          width: 512px;
+          height: 650px;
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          margin-right: -50%;
+          transform: translate(-50%, -50%);
+          border: 2px solid rgb(141, 188, 248);
+        }
+        .demo-card-wide > .mdl-card__title {
+          color: rgb(255, 255, 255);
+          height: 100px;
+          background: url('https://i.pinimg.com/564x/39/92/e1/3992e1302070bbbc99261207e618a194.jpg') center / cover;
+          text-align: center
+        }
+        .demo-card-wide > .mdl-card__menu {
+          color: #ff0;
+          text-align: center
+        }
+        .inline {
+          display:inline-block;
+          margin-right:5px;
+        }
+        .left_align {
+          text-align: right; 
+        }
+        body {
+          background-color: #ffffff;
+        }
+        img {
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 1px;
+          width: 150px;
+        }
+        
+</style>
+</head>
+
+<form action = "http://127.0.0.1:8081/email_confirmation" method = "POST">  
+<div class="demo-card-wide mdl-card mdl-shadow--2dp" align="center">
+
+    <div class="mdl-card__title" text-align="center">
+            <h2 style="text-align:center;" class="mdl-card__title-text">Crear cuenta</h2>
+            <img src="http://i68.tinypic.com/judauw.png" border="0" alt="Image and video hosting by TinyPic" style="position: relative; WIDTH:90px; HEIGHT:70px; LEFT:240px;">
+    </div>
+    <div class="mdl-card__supporting-text">
+            ¿YA ESTAS REGISTRADO?
+            <!-- Flat button with ripple -->
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                 ingresar
+            </button>
+    </div>
+  
+  
+    <div class="left_align">
+    
+    <!-- Simple Full Name Input Textfield -->
+  
+    <div>
+         <b>   Nombre Completo : </b> <div class="mdl-textfield mdl-js-textfield">
+           <input class="mdl-textfield__input" type="text" id="sample1" name="full_name"> 
+          <label class="mdl-textfield__label" for="sample1"></label>
+        </div>
+    </div>
+    <!-- Simple personalID Input Textfield -->
+    <div>
+          <b>  Carné : </b>   <div class="mdl-textfield mdl-js-textfield">
+             <input class="mdl-textfield__input" type="text" id="sample2" name="personal_id"> 
+            <label class="mdl-textfield__label" for="sample2"></label>
+        </div>
+    </div>
+
+    <!-- Simple email Input Textfield -->
+    <div>
+          <b>  Correo Electrónico : </b>   <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="sample3" name="email"> 
+         <label class="mdl-textfield__label" for="sample3"></label>
+     </div>
+    </div>
+
+    <!-- Simple password Input Textfield -->
+    <div>
+          <b>  Contraseña : </b>  <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="password" id="sample4" name="password"> 
+         <label class="mdl-textfield__label" for="sample3"></label>
+     </div>
+    </div>
+
+    <!-- Simple password Input Textfield -->
+    <div>
+            <b> Confirmar Contraseña : </b>  <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="password" id="sample5" name="password_confirm"> 
+            <label class="mdl-textfield__label" for="sample3"></label>
+        </div>
+    </div>
+
+  </div>
+
+    <div class="inline">
+        <!-- Primary-colored flat button -->
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="submit">
+       <b> CREAR CUENTA </b> 
+        </button>
+
+    </div>
+  </form>
+</div>
