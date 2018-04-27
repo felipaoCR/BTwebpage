@@ -40,6 +40,10 @@ var transporter = nodemailer.createTransport({
 
 app.use(express.static('public'));
 
+app.get('/', function(req, res) {
+  res.send("Testing");
+})
+
 // Upload index.html to the localhost
 app.get('/index.html', function (req, res) {
     res.sendFile( __dirname + "/templates" + "/" + "index.html" );
