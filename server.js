@@ -4,6 +4,10 @@ var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
+// Setup ports for OpenShift
+var server_port    = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var server_ip_addr = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -44,11 +48,6 @@ app.get('/index.html', function (req, res) {
 // Handle create_account calls thru MD template
 app.get('/create_account.html', function (req, res) {
     res.sendFile( __dirname + "/templates" + "/" + "create_account.html" );
- })
-
-// Upload create-account.html to the localhost
-app.get('/create-account.html', function (req, res) {
-    res.sendFile( __dirname + "/" + "create-account.html" );
  })
 
 // Post handler if respective action gets triggered from HTML POST method
@@ -96,10 +95,6 @@ app.post('/email_confirmation', urlencodedParser, function (req, res) {
 
   })
   
- var server = app.listen(8081, function () {
-    var host = server.address().address
-    var port = server.address().port
- 
-    console.log("Example app listening at http://%s:%s", host, port)
- 
+ var server = app.listen(server_port, server_ip_addr, function () {
+    console.log("Example app listening at http://%s:%s", server_ip_addr, server_port)
  })
